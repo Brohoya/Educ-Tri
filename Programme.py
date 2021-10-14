@@ -7,6 +7,5 @@ window.minsize(1024,600)
 window.maxsize(1024,600)
 
 
-
 window.mainloop()
 
