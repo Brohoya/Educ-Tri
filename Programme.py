@@ -16,7 +16,6 @@ gaming = True
 click = False
 drag = False
 
-<<<<<<< HEAD
 class Dechet:
     def __init__(self, nom, largeur, hauteur, type):
         self.nom = nom
@@ -31,9 +30,6 @@ jager = Dechet("jager.png", 60, 150, "vert")
 bouteille = Dechet("bouteille.png", 100, 180, "jaune")
 livre = Dechet("livre.png", 150, 150, "bleu")
 pomme = Dechet("pomme.png", 75, 100, "composte")
-=======
-window.mainloop()
->>>>>>> 3ba918abc194fb6920e71541bf8501e9f8af0400
 
 #poubelles
 taille_poubelle = [200, 230]
