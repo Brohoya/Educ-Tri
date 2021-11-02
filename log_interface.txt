@@ -1,0 +1,7 @@
+• Maintenance :
+	- langues
+	- vidage des bacs
+• Jeter les déchets :
+	- faire le link entre python et arduino
+• Apprendre :
+	- ajouter la bdd de dechets 
