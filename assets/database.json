@@ -1,0 +1,44 @@
+{
+    "infos": [
+        {
+            "pincode" : 6666
+        }
+    ],
+    "dechets": [ 
+
+        { 
+            "id"  :  1 , 
+            "nom" :  "Pomme" , 
+            "description"  :  "Une pomme est une pomme" , 
+            "type"  :  "noir" , 
+            "image"  : "pomme.png"
+        },
+        { 
+            "id"  :  2 , 
+            "nom" :  "Bouteille en verre" , 
+            "description"  :  "L'alcool c'est de l'eau" , 
+            "type"  :  "vert" , 
+            "image"  : "bouteille_jager.png" 
+        },
+        { 
+            "id"  :  3 , 
+            "nom" :  "Livres" , 
+            "description"  :  "Il faut lire les enfants, c'est bieng" , 
+            "type"  :  "bleu" , 
+            "image"  : "livres.png" 
+        },
+        { 
+            "id"  :  4 , 
+            "nom" :  "Bouteille en plastique" , 
+            "description"  :  "J'adore l'eau" , 
+            "type"  :  "jaune" , 
+            "image"  : "bouteille_plastique.png" 
+        }  
+    ],
+    "scoreboard" : [
+        {
+
+        }
+    ]
+} 
+  

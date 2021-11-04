@@ -1,11 +1,13 @@
 import pygame
 from assets.classes.pincode import Pincode
+import json
 
 class Reglages:
     def __init__(self):
-        self.lanced = False
-        self.code = 6666
+        database = json.load(open('assets/database.json'))
+        self.code = str(database['infos'][0]['pincode'])
         self.pincode = Pincode(self.code)
+        self.lanced = False
         self.pincode.show = True
         self.click = False
         self.background = pygame.image.load('assets/interface/fond_accueil.png')

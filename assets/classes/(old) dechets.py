@@ -1,17 +1,13 @@
 import pygame
 import os
-import json
-
 
 class Dechet:
     def __init__(self):
         self.dechets = []
-        self.database = json.load(open('assets/database.json'))
         tailleMax = 130
-        # liste = os.listdir("assets/dechets")
-        for i in self.database['dechets']:
-            image = pygame.image.load('assets/dechets/' + i['image'])
-            # print(self.database['infos'])
+        liste = os.listdir("assets/dechets")
+        for i in liste:
+            image = pygame.image.load('assets/dechets/' + i)
             width, height = image.get_size()
 
             #adaptation taille
@@ -28,6 +24,8 @@ class Dechet:
                 image = pygame.transform.scale(image, taille)
             else: taille = [width, height]
 
-            self.dechets.append([[i['nom'], taille, i['type']], image])
+            nom = i.split("_")
+            nom = ".".join(nom).split(".")
+            self.dechets.append([[nom[1], taille, nom[0]], image])
 
         # print(self.dechets)

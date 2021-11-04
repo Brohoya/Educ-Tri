@@ -1,5 +1,6 @@
 import pygame
 from assets.classes.bouton import Bouton
+import json
 
 class Pincode:
     def __init__(self, code):
