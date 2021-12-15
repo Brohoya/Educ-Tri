@@ -4,11 +4,13 @@ from assets.classes.bouton import Bouton
 class Menu():
     def __init__(self, jeu, reglages):
         fenetre = [1024, 600]
+
         #parametres sur les boutons
         bouton_central = 208
         boutons_lateraux = 158
         hauteur_bouton = 240
         ecart = 70
+        
         #attributs
         self.lanced = False
         self.jeu = jeu
@@ -24,6 +26,7 @@ class Menu():
         self.aide_poubelle = [pygame.image.load("assets/interface/affichages/aide_poubelle.png"), [350, 130]]
         self.aide_jouer = [pygame.image.load("assets/interface/affichages/aide_jouer.png"), [185, 450]]
         self.aide_apprendre = [pygame.image.load("assets/interface/affichages/aide_apprendre.png"), [645, 450]]
+
     def update(self, fenetre):
         fenetre.blit(self.background, (0, 0))
 

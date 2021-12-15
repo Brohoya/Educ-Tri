@@ -54,7 +54,7 @@ while running:
         menu.update(fenetre)
 
     if reglages.lanced:
-        reglages.update(fenetre)
+        reglages.update(fenetre) 
 
     #maj de la fenetre (.update() fait la meme chose si pas d'argument)
     pygame.display.flip()   

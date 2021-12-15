@@ -2,6 +2,7 @@ import pygame
 import random
 from assets.classes.poubelles import Poubelles
 from assets.classes.dechets import Dechet
+from pygame import gfxdraw
 
 class Jeu:
     def __init__(self):
@@ -9,15 +10,19 @@ class Jeu:
         self.background = pygame.image.load('assets/bordel/paysageux.png')
         self.poubelles = Poubelles()
         self.dechets = Dechet()
+
         self.num = self.spawner(-1)
+        self.dechet = self.dechets.dechets[self.num]
+        self.taille_dechet = self.dechet[0][1]
+
         self.score = 0
         self.loc = [300, 50]
         self.drag = False
         self.click = False
-        self.dechet = self.dechets.dechets[self.num]
-        self.taille_dechet = self.dechet[0][1]
         self.marge_ergo = 0.15
+
         self.font = pygame.font.SysFont(None, 24)
+        self.color = (0, 0, 255)
 
     def spawner(self, num):
             if(num<0):
@@ -36,7 +41,7 @@ class Jeu:
         fenetre.blit(self.background, (-50, -75))
         #dechet
         fenetre.blit(self.dechet[1], (self.loc[0], self.loc[1]))
-
+        #score
         fenetre.blit(self.affichage_score, (800, 50))
 
         if not self.click and self.drag:
@@ -46,7 +51,11 @@ class Jeu:
 
         #drag
         if self.click and track[0]<=(self.loc[0] + self.taille_dechet[0])*(1 + self.marge_ergo) and track[0]>=(self.loc[0])*(1 - self.marge_ergo) and track[1]<=(self.loc[1] + self.taille_dechet[1])*(1 + self.marge_ergo) and track[1]>=(self.loc[1])*(1 - self.marge_ergo):
-            self.loc = [track[0] - self.taille_dechet[0]/2, track[1] - self.taille_dechet[1]/2]
+            self.loc = [int(track[0] - self.taille_dechet[0]/2), int(track[1] - self.taille_dechet[1]/2)]
+            gfxdraw.pixel(fenetre, self.loc[0], self.loc[1], self.color)
+            gfxdraw.pixel(fenetre, int(self.loc[0] + self.taille_dechet[0]), self.loc[1], self.color)
+            gfxdraw.pixel(fenetre, self.loc[0], int(self.loc[1] + self.taille_dechet[1]), self.color)
+            gfxdraw.pixel(fenetre, int(self.loc[0] + self.taille_dechet[0]), int(self.loc[1] + self.taille_dechet[1]), self.color)
             self.drag = True
 
         #affichage poubelles
@@ -61,7 +70,7 @@ class Jeu:
 
             if track[0] in range(self.poubelles.loc_pb[0], (self.poubelles.loc_pb[0] + self.poubelles.taille_poubelle[0])) and track[1] in range(self.poubelles.loc_pb[1], (self.poubelles.loc_pb[1] + self.poubelles.taille_poubelle[1])):
                 fenetre.blit(self.poubelles.pbo, (self.poubelles.loc_pb[0], self.poubelles.loc_pb[1] - self.poubelles.ouverture_loc))
-            else: fenetre.blit(self.poubelles.pbf, self.poubelles.loc_pb)
+            else: fenetre.blit(self.poubelles.pbf, self.poubelles.loc_pb) 
 
             if track[0] in range(self.poubelles.loc_pn[0], (self.poubelles.loc_pn[0] + self.poubelles.taille_poubelle[0])) and track[1] in range(self.poubelles.loc_pn[1], (self.poubelles.loc_pn[1] + self.poubelles.taille_poubelle[1])):
                 fenetre.blit(self.poubelles.pno, (self.poubelles.loc_pn[0], self.poubelles.loc_pn[1] - self.poubelles.ouverture_loc))
@@ -112,12 +121,13 @@ class Jeu:
 
         if len(self.dechets.dechets) <= 0:
             self.score = 0
-            # self.num = self.spawner(self.num)
             self.dechets = Dechet()
+            self.num = self.spawner(-1)
             self.lanced = False
             # menu.lanced = True
         else :
             self.dechet = self.dechets.dechets[self.num]
+            self.taille_dechet = self.dechet[0][1]
             
         self.drag = False
 
