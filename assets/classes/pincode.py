@@ -8,13 +8,13 @@ class Pincode:
         self.back = False
         self.code = str(code)
         self.pin = ""
-        self.ecran = pygame.image.load('assets/interface/affichages/ecran.png')
+        self.ecran = pygame.image.load('assets/images/interface/affichages/ecran.png')
         ecart = 15
         self.fenetre = [1024, 600]
-        self.font_pin = pygame.font.Font("assets/interface/Acme-Regular.ttf", 110)
-        self.font_mdp = pygame.font.Font("assets/interface/Acme-Regular.ttf", 25)
+        self.font_pin = pygame.font.Font("assets/images/interface/Acme-Regular.ttf", 110)
+        self.font_mdp = pygame.font.Font("assets/images/interface/Acme-Regular.ttf", 25)
         # print(pygame.font.get_fonts())
-        width = pygame.image.load('assets/interface/boutons/huit.png').get_size()[0]
+        width = pygame.image.load('assets/images/interface/boutons/huit.png').get_size()[0]
         self.huit = Bouton("huit", [int(self.fenetre[0]/2 - width/2), 210])
         self.neuf = Bouton("neuf", [int(self.fenetre[0]/2 + width/2 + ecart), self.huit.loc[1]])
         self.sept = Bouton("sept", [int(self.fenetre[0]/2 - (3*width/2) - ecart), self.huit.loc[1]])

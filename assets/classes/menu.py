@@ -14,7 +14,7 @@ class Menu():
         #attributs
         self.lanced = False
         self.jeu = jeu
-        self.background = pygame.image.load('assets/interface/fond_accueil.png')
+        self.background = pygame.image.load('assets/images/interface/fond_accueil.png')
         self.click = False
         self.reglages = reglages
         self.bouton_poubelle = Bouton("bouton_poubelle", [int(fenetre[0]/2 - bouton_central/2), hauteur_bouton])
@@ -22,10 +22,10 @@ class Menu():
         self.bouton_apprendre = Bouton("bouton_apprendre", [int(fenetre[0]/2 + bouton_central/2 + ecart), hauteur_bouton + bouton_central - boutons_lateraux])
         self.bouton_maintenance = Bouton("bouton_maintenance", [20, 20])
         self.bouton_aide = Bouton("bouton_aide", [fenetre[0] - 20 - 88, 20])
-        self.aide_maintenance = [pygame.image.load("assets/interface/affichages/aide_maintenance.png"), [110, 30]]
-        self.aide_poubelle = [pygame.image.load("assets/interface/affichages/aide_poubelle.png"), [350, 130]]
-        self.aide_jouer = [pygame.image.load("assets/interface/affichages/aide_jouer.png"), [185, 450]]
-        self.aide_apprendre = [pygame.image.load("assets/interface/affichages/aide_apprendre.png"), [645, 450]]
+        self.aide_maintenance = [pygame.image.load("assets/images/interface/affichages/aide_maintenance.png"), [110, 30]]
+        self.aide_poubelle = [pygame.image.load("assets/images/interface/affichages/aide_poubelle.png"), [350, 130]]
+        self.aide_jouer = [pygame.image.load("assets/images/interface/affichages/aide_jouer.png"), [185, 450]]
+        self.aide_apprendre = [pygame.image.load("assets/images/interface/affichages/aide_apprendre.png"), [645, 450]]
 
     def update(self, fenetre):
         fenetre.blit(self.background, (0, 0))

@@ -5,8 +5,8 @@ class Bouton:
     def __init__(self, nomBouton, loc):
         self.loc = loc
         self.drag = False
-        self.show = pygame.image.load('assets/interface/boutons/' + nomBouton + '.png')
-        self.clicked = pygame.image.load('assets/interface/boutons/' + nomBouton + '_clicked.png')
+        self.show = pygame.image.load('assets/images/interface/boutons/' + nomBouton + '.png')
+        self.clicked = pygame.image.load('assets/images/interface/boutons/' + nomBouton + '_clicked.png')
         self.width, self.height = self.show.get_size()
 
     def isClicked(self, click, fenetre):

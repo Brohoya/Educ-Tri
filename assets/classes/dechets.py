@@ -10,7 +10,7 @@ class Dechet:
         tailleMax = 130
         # liste = os.listdir("assets/dechets")
         for i in self.database['dechets']:
-            image = pygame.image.load('assets/dechets/' + i['image'])
+            image = pygame.image.load('assets/images/dechets/' + i['image'])
             # print(self.database['infos'])
             width, height = image.get_size()
 

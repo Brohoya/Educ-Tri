@@ -7,7 +7,7 @@ from pygame import gfxdraw
 class Jeu:
     def __init__(self):
         self.lanced = False
-        self.background = pygame.image.load('assets/bordel/paysageux.png')
+        self.background = pygame.image.load('assets/images/jeu/paysageux.png')
         self.poubelles = Poubelles()
         self.dechets = Dechet()
 

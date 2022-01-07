@@ -10,8 +10,8 @@ class Reglages:
         self.lanced = False
         self.pincode.show = True
         self.click = False
-        self.background = pygame.image.load('assets/interface/fond_accueil.png')
-        self.back = pygame.image.load('assets/interface/boutons/bouton_maintenance_clicked.png')
+        self.background = pygame.image.load('assets/images/interface/fond_accueil.png')
+        self.back = pygame.image.load('assets/images/interface/boutons/bouton_maintenance_clicked.png')
     def update(self, fenetre):
         fenetre.blit(self.background, (0, 0))
         fenetre.blit(self.back, (20, 20))

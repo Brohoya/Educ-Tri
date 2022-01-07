@@ -10,8 +10,6 @@ resolution = [1024, 600]
 fenetre = pygame.display.set_mode(resolution)
 click = False
 
-background = pygame.image.load('assets/bordel/paysageux.png')
-
 jeu = Jeu()
 reglages = Reglages()
 menu = Menu(jeu, reglages)
